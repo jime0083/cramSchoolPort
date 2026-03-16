@@ -1,7 +1,7 @@
 <template>
   <div class="overview-page">
     <!-- Page Header -->
-    <PageHeader title="塾概要" />
+    <PageHeader title="塾概要" :backgroundImage="topImg" />
 
     <!-- Secondary Nav -->
     <nav class="secondary-nav">
@@ -106,6 +106,7 @@
 <script setup>
 import PageHeader from '../components/PageHeader.vue'
 import PageBreadcrumb from '../components/PageBreadcrumb.vue'
+import topImg from '@/assets/images/top-img.png'
 </script>
 
 <style scoped>
@@ -115,7 +116,7 @@ import PageBreadcrumb from '../components/PageBreadcrumb.vue'
 }
 
 .secondary-nav-list {
-  max-width: 1100px;
+  max-width: 980px;
   margin: 0 auto;
   display: flex;
   justify-content: center;

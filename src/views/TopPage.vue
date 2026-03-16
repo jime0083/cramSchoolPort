@@ -273,7 +273,7 @@ import banner3 from '@/assets/images/banner3 1.png'
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 1100px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 60px 40px;
   height: 100%;
@@ -337,7 +337,7 @@ import banner3 from '@/assets/images/banner3 1.png'
 }
 
 .secondary-nav-list {
-  max-width: 1100px;
+  max-width: 980px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -420,9 +420,9 @@ import banner3 from '@/assets/images/banner3 1.png'
 }
 
 .trial-banner-inner {
-  max-width: 1100px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
   display: flex;
   justify-content: center;
 }
@@ -469,9 +469,9 @@ import banner3 from '@/assets/images/banner3 1.png'
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .section-title {

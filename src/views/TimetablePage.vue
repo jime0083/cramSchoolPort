@@ -1,7 +1,7 @@
 <template>
   <div class="timetable-page">
     <!-- Page Header -->
-    <PageHeader title="授業料・時間割" />
+    <PageHeader title="授業料・時間割" :backgroundImage="topImg" />
 
     <!-- Secondary Nav -->
     <nav class="secondary-nav">
@@ -25,8 +25,8 @@
           <button
             v-for="tab in tabs"
             :key="tab.id"
-            :class="['tab-btn', { active: activeTab === tab.id }]"
-            @click="activeTab = tab.id"
+            class="tab-btn"
+            @click="scrollToSection(tab.id)"
           >
             {{ tab.name }}
             <span class="tab-arrow">▼</span>
@@ -105,7 +105,7 @@
     </section>
 
     <!-- Junior High 1 Class -->
-    <section class="class-section section bg-gray" id="junior1">
+    <section class="class-section section" id="junior1">
       <div class="container">
         <h2 class="class-title">中学1年生 クラス</h2>
 
@@ -261,7 +261,7 @@
     </section>
 
     <!-- Junior High 3 Class -->
-    <section class="class-section section bg-gray" id="junior3">
+    <section class="class-section section" id="junior3">
       <div class="container">
         <h2 class="class-title">中学3年生 クラス</h2>
 
@@ -428,11 +428,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import PageHeader from '../components/PageHeader.vue'
 import PageBreadcrumb from '../components/PageBreadcrumb.vue'
-
-const activeTab = ref('elementary')
+import topImg from '@/assets/images/top-img.png'
 
 const tabs = [
   { id: 'elementary', name: '小学生' },
@@ -441,16 +439,38 @@ const tabs = [
   { id: 'junior3', name: '中学3年生' },
   { id: 'high', name: '高校生' }
 ]
+
+const scrollToSection = (id) => {
+  const element = document.getElementById(id)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+}
 </script>
 
 <style scoped>
+.timetable-page {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* Section Common */
+.section {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0;
+}
+
 /* Secondary Nav */
 .secondary-nav {
-  background-color: var(--color-primary);
+  background-color: #003C78;
 }
 
 .secondary-nav-list {
-  max-width: 1100px;
+  max-width: 980px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -489,18 +509,18 @@ const tabs = [
   display: flex;
   justify-content: center;
   gap: 0;
-  border: 1px solid var(--color-primary);
-  border-radius: 4px;
+  border: 2px solid #003C78;
+  border-radius: 0;
   overflow: hidden;
 }
 
 .tab-btn {
   flex: 1;
-  padding: 15px 20px;
+  padding: 18px 20px;
   background: #fff;
   border: none;
-  border-right: 1px solid var(--color-primary);
-  color: var(--color-primary);
+  border-right: 2px solid #003C78;
+  color: #003C78;
   font-size: 0.9375rem;
   font-weight: 500;
   cursor: pointer;
@@ -511,9 +531,8 @@ const tabs = [
   border-right: none;
 }
 
-.tab-btn:hover,
-.tab-btn.active {
-  background-color: var(--color-primary);
+.tab-btn:hover {
+  background-color: #003C78;
   color: #fff;
 }
 
@@ -525,10 +544,7 @@ const tabs = [
 /* Class Section */
 .class-section {
   padding: 50px 0;
-}
-
-.bg-gray {
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 
 .class-title {
@@ -536,22 +552,19 @@ const tabs = [
   font-weight: 700;
   text-align: center;
   margin-bottom: 30px;
-  color: var(--color-text);
+  color: #333;
 }
 
 .schedule-card {
-  max-width: 900px;
-  margin: 0 auto;
   background: #fff;
   padding: 30px;
-  border-radius: 4px;
 }
 
 .schedule-year {
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--color-primary);
-  border-left: 4px solid var(--color-primary);
+  color: #003C78;
+  border-left: 4px solid #003C78;
   padding-left: 15px;
   margin-bottom: 20px;
 }
@@ -598,7 +611,7 @@ const tabs = [
 }
 
 .schedule-table th {
-  background-color: var(--color-primary);
+  background-color: #003C78;
   color: #fff;
   font-weight: 500;
 }
@@ -620,7 +633,7 @@ const tabs = [
 }
 
 .details-table th {
-  background-color: var(--color-primary);
+  background-color: #003C78;
   color: #fff;
   font-weight: 500;
   text-align: center;
@@ -674,7 +687,7 @@ const tabs = [
 
   .tab-btn {
     border-right: none;
-    border-bottom: 1px solid var(--color-primary);
+    border-bottom: 2px solid #003C78;
   }
 
   .tab-btn:last-child {

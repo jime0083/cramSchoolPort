@@ -48,7 +48,7 @@
 }
 
 .footer-inner {
-  max-width: 1100px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 40px 20px;
 }

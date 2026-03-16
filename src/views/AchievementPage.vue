@@ -1,7 +1,7 @@
 <template>
   <div class="achievement-page">
     <!-- Page Header -->
-    <PageHeader title="合格実績" />
+    <PageHeader title="合格実績" :backgroundImage="topImg" />
 
     <!-- Secondary Nav -->
     <nav class="secondary-nav">
@@ -125,6 +125,7 @@
 <script setup>
 import PageHeader from '../components/PageHeader.vue'
 import PageBreadcrumb from '../components/PageBreadcrumb.vue'
+import topImg from '@/assets/images/top-img.png'
 
 const records = [
   { year: '27', results: '茨木(32名)・三島(22名)・槻の木(21名)他' },
@@ -149,7 +150,7 @@ const records = [
 }
 
 .secondary-nav-list {
-  max-width: 1100px;
+  max-width: 980px;
   margin: 0 auto;
   display: flex;
   justify-content: center;

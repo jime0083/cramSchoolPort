@@ -1,7 +1,7 @@
 <template>
   <div class="contact-page">
     <!-- Page Header -->
-    <PageHeader title="お問い合わせ" />
+    <PageHeader title="お問い合わせ" :backgroundImage="topImg" />
 
     <!-- Secondary Nav -->
     <nav class="secondary-nav">
@@ -124,6 +124,7 @@
 import { ref } from 'vue'
 import PageHeader from '../components/PageHeader.vue'
 import PageBreadcrumb from '../components/PageBreadcrumb.vue'
+import topImg from '@/assets/images/top-img.png'
 
 const form = ref({
   name: '',
@@ -146,7 +147,7 @@ const handleSubmit = () => {
 }
 
 .secondary-nav-list {
-  max-width: 1100px;
+  max-width: 980px;
   margin: 0 auto;
   display: flex;
   justify-content: center;

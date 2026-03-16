@@ -163,9 +163,9 @@ import classImg from '@/assets/images/クラス分けを実施画像.png'
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .section-title {
@@ -182,7 +182,7 @@ import classImg from '@/assets/images/クラス分けを実施画像.png'
 }
 
 .secondary-nav-list {
-  max-width: 1100px;
+  max-width: 980px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -217,8 +217,6 @@ import classImg from '@/assets/images/クラス分けを実施画像.png'
 }
 
 .about-content {
-  max-width: 900px;
-  margin: 0 auto;
   font-size: 0.9375rem;
   line-height: 2;
   color: #333;
@@ -234,8 +232,7 @@ import classImg from '@/assets/images/クラス分けを実施画像.png'
 }
 
 .policy-image {
-  max-width: 700px;
-  margin: 0 auto 50px;
+  margin: 0 0 50px;
 }
 
 .policy-image img {
@@ -243,8 +240,7 @@ import classImg from '@/assets/images/クラス分けを実施画像.png'
 }
 
 .policy-points {
-  max-width: 800px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .policy-point {
@@ -317,13 +313,7 @@ import classImg from '@/assets/images/クラス分けを実施画像.png'
   color: #003C78;
   font-size: 0.875rem;
   font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.btn-junior:hover {
-  background-color: #003C78;
-  color: #fff;
+  cursor: default;
 }
 
 /* Elementary Section */
