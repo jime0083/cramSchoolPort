@@ -20,7 +20,7 @@ defineProps({
 <style scoped>
 .page-header {
   position: relative;
-  height: 200px;
+  height: 400px;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -35,20 +35,20 @@ defineProps({
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(26, 58, 110, 0.6);
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .page-header-title {
   position: relative;
   z-index: 1;
-  color: #fff;
+  color: #00A0F0;
   font-size: 2rem;
   font-weight: 700;
 }
 
 @media (max-width: 768px) {
   .page-header {
-    height: 150px;
+    height: 200px;
   }
 
   .page-header-title {

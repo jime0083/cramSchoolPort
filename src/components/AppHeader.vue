@@ -3,6 +3,7 @@
     <!-- Top Header -->
     <div class="header-top">
       <div class="header-top-inner">
+        <!-- Logo -->
         <div class="header-logo">
           <router-link to="/">
             <span class="header-logo-sub">板橋区の学習塾なら</span>
@@ -10,35 +11,37 @@
           </router-link>
         </div>
 
+        <!-- Contact Info (Desktop) -->
         <div class="header-contact">
           <p class="header-contact-text">無料体験入塾の申し込み・お問い合わせなどお気軽にご連絡ください</p>
           <div class="header-contact-phones">
             <a href="tel:000-000-0000" class="header-phone">
-              <span class="phone-icon">📞</span>
+              <svg class="phone-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
               <span class="phone-number">000-000-0000</span>
             </a>
             <a href="tel:111-111-1111" class="header-phone">
-              <span class="phone-icon">📱</span>
+              <svg class="phone-icon mobile" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+              </svg>
               <span class="phone-number">111-111-1111</span>
             </a>
           </div>
         </div>
 
-        <div class="header-cta">
-          <router-link to="/contact" class="header-cta-btn header-cta-trial">
-            <span>無料体験申し込み</span>
-            <span class="cta-arrow">▼</span>
-          </router-link>
-          <router-link to="/contact" class="header-cta-btn header-cta-contact">
-            <span>お問い合わせ</span>
-            <span class="cta-arrow">▼</span>
-          </router-link>
-        </div>
-
-        <!-- Mobile Header -->
+        <!-- Mobile Header Icons -->
         <div class="header-mobile-icons">
-          <a href="tel:000-000-0000" class="mobile-icon">📞</a>
-          <a href="tel:111-111-1111" class="mobile-icon">📱</a>
+          <a href="tel:000-000-0000" class="mobile-icon-link">
+            <svg class="mobile-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+          </a>
+          <a href="tel:111-111-1111" class="mobile-icon-link">
+            <svg class="mobile-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+            </svg>
+          </a>
           <button class="hamburger" @click="toggleMenu" :class="{ active: isMenuOpen }">
             <span></span>
             <span></span>
@@ -46,35 +49,30 @@
           </button>
         </div>
       </div>
+
+      <!-- CTA Buttons (Desktop) - Outside container for right edge alignment -->
+      <div class="header-cta">
+        <router-link to="/contact" class="header-cta-btn header-cta-trial">
+          <span>無料体験申し込み</span>
+          <svg class="cta-arrow" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </router-link>
+        <router-link to="/contact" class="header-cta-btn header-cta-contact">
+          <span>お問い合わせ</span>
+          <svg class="cta-arrow" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </router-link>
+      </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="header-nav" :class="{ 'is-open': isMenuOpen }">
-      <ul class="nav-list">
-        <li class="nav-item">
-          <router-link to="/" class="nav-link" @click="closeMenu">TOP</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/policy" class="nav-link" @click="closeMenu">授業の方針</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/timetable" class="nav-link" @click="closeMenu">授業料・時間割</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/achievement" class="nav-link" @click="closeMenu">合格実績</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/overview" class="nav-link" @click="closeMenu">塾概要</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/contact" class="nav-link" @click="closeMenu">お問い合わせ</router-link>
-        </li>
-      </ul>
-    </nav>
-
     <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" :class="{ 'is-open': isMenuOpen }" @click="closeMenu"></div>
+
+    <!-- Mobile Menu -->
     <div class="mobile-menu" :class="{ 'is-open': isMenuOpen }">
-      <div class="mobile-menu-content">
+      <nav class="mobile-nav">
         <ul class="mobile-nav-list">
           <li><router-link to="/" @click="closeMenu">TOP</router-link></li>
           <li><router-link to="/policy" @click="closeMenu">授業の方針</router-link></li>
@@ -86,9 +84,8 @@
           <li><router-link to="/" @click="closeMenu">サイトマップ</router-link></li>
           <li><router-link to="/" @click="closeMenu">プライバシーポリシー</router-link></li>
         </ul>
-      </div>
+      </nav>
     </div>
-    <div class="mobile-menu-overlay" :class="{ 'is-open': isMenuOpen }" @click="closeMenu"></div>
   </header>
 </template>
 
@@ -116,18 +113,21 @@ const closeMenu = () => {
 
 .header-top {
   background-color: #fff;
-  border-bottom: 1px solid #eee;
+  height: 80px;
+  display: flex;
+  align-items: stretch;
 }
 
 .header-top-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 20px;
+  flex: 1;
+  max-width: calc(100% - 400px);
+  padding: 0 20px 0 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* Logo */
 .header-logo a {
   display: block;
   text-decoration: none;
@@ -136,51 +136,65 @@ const closeMenu = () => {
 
 .header-logo-sub {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   color: #666;
+  font-weight: bold;
+  margin-bottom: 2px;
 }
 
 .header-logo-main {
   display: block;
   font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--color-primary);
+  font-weight: bold;
+  color: #1a3a6e;
+  letter-spacing: 0.05em;
 }
 
+/* Contact */
 .header-contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .header-contact-text {
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   color: #666;
   margin-bottom: 5px;
 }
 
 .header-contact-phones {
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 .header-phone {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-primary);
+  gap: 6px;
   text-decoration: none;
+  color: #1a3a6e;
+  line-height: 1;
 }
 
 .phone-icon {
-  font-size: 1.25rem;
+  width: 20px;
+  height: 20px;
+  color: #1a3a6e;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
+.phone-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* CTA Buttons */
 .header-cta {
   display: flex;
-  gap: 0;
+  flex-shrink: 0;
 }
 
 .header-cta-btn {
@@ -188,41 +202,52 @@ const closeMenu = () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 15px 25px;
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
   transition: opacity 0.3s;
+  width: 200px;
+  height: 80px;
+  box-sizing: border-box;
 }
 
 .header-cta-btn:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .header-cta-trial {
-  background-color: var(--color-primary);
+  background-color: #003C78;
   color: #fff;
 }
 
 .header-cta-contact {
-  background-color: #666;
+  background-color: #4A5568;
   color: #fff;
 }
 
 .cta-arrow {
-  font-size: 0.625rem;
-  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
 }
 
+/* Mobile Icons */
 .header-mobile-icons {
   display: none;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
+}
+
+.mobile-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a3a6e;
 }
 
 .mobile-icon {
-  font-size: 1.25rem;
-  text-decoration: none;
+  width: 22px;
+  height: 22px;
 }
 
 /* Hamburger */
@@ -231,25 +256,25 @@ const closeMenu = () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
-  background: var(--color-primary);
+  width: 44px;
+  height: 44px;
+  background: #1a3a6e;
   border: none;
   cursor: pointer;
-  padding: 8px;
-  gap: 5px;
+  padding: 10px;
+  gap: 6px;
 }
 
 .hamburger span {
   display: block;
-  width: 24px;
+  width: 22px;
   height: 2px;
   background: #fff;
   transition: all 0.3s;
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(6px, 6px);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -260,74 +285,7 @@ const closeMenu = () => {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Navigation */
-.header-nav {
-  background-color: var(--color-primary);
-}
-
-.nav-list {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
-
-.nav-item {
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.nav-item:first-child {
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.nav-link {
-  display: block;
-  padding: 15px 30px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  transition: background-color 0.3s;
-}
-
-.nav-link:hover,
-.nav-link.router-link-active {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Mobile Menu */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -280px;
-  width: 280px;
-  height: 100vh;
-  background: #fff;
-  z-index: 1001;
-  transition: right 0.3s;
-  overflow-y: auto;
-}
-
-.mobile-menu.is-open {
-  right: 0;
-}
-
-.mobile-menu-content {
-  padding: 60px 20px 20px;
-}
-
-.mobile-nav-list li {
-  border-bottom: 1px solid #eee;
-}
-
-.mobile-nav-list a {
-  display: block;
-  padding: 15px 0;
-  color: #333;
-  text-decoration: none;
-  font-size: 0.9375rem;
-}
-
+/* Mobile Menu Overlay */
 .mobile-menu-overlay {
   position: fixed;
   top: 0;
@@ -335,7 +293,7 @@ const closeMenu = () => {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  z-index: 998;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s;
@@ -346,16 +304,67 @@ const closeMenu = () => {
   visibility: visible;
 }
 
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  z-index: 999;
+  transition: right 0.3s;
+  overflow-y: auto;
+}
+
+.mobile-menu.is-open {
+  right: 0;
+}
+
+.mobile-nav {
+  padding: 20px 0;
+}
+
+.mobile-nav-list {
+  list-style: none;
+}
+
+.mobile-nav-list li {
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-nav-list a {
+  display: block;
+  padding: 16px 25px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: background-color 0.3s;
+}
+
+.mobile-nav-list a:hover {
+  background-color: #f5f5f5;
+}
+
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .header-contact {
     display: none;
   }
 }
 
 @media (max-width: 768px) {
+  .header-top {
+    height: auto;
+  }
+
   .header-top-inner {
+    max-width: 100%;
     padding: 10px 15px;
+  }
+
+  .header-logo-sub {
+    display: none;
   }
 
   .header-logo-main {
@@ -369,10 +378,6 @@ const closeMenu = () => {
 
   .header-mobile-icons {
     display: flex;
-  }
-
-  .header-nav {
-    display: none;
   }
 }
 </style>

@@ -2,6 +2,8 @@
   <div class="top-page">
     <!-- Hero Section -->
     <section class="hero">
+      <img :src="topImg" alt="板橋セミナー" class="hero-bg" />
+      <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 class="hero-title">
           <span class="hero-title-line">目標に向かって</span>
@@ -32,33 +34,34 @@
       </ul>
     </nav>
 
-    <!-- Mobile Badges -->
-    <div class="mobile-badges">
-      <p class="mobile-badges-text">
+    <!-- Mobile Info Bar -->
+    <div class="mobile-info-bar">
+      <p class="mobile-info-text">
         板橋区にある
-        <span class="mobile-badge">小</span>
-        <span class="mobile-badge">中</span>
-        <span class="mobile-badge">高</span>
+        <span class="mobile-badge badge-green">小</span>
+        <span class="mobile-badge badge-blue">中</span>
+        <span class="mobile-badge badge-yellow">高</span>
         対象の学習塾
+      </p>
+      <p class="mobile-info-schools">
+        御岳中学・大里中学・第四中学などの<br />
+        入試やテスト対策におすすめの学習塾
       </p>
     </div>
 
     <!-- Trial Banner -->
     <section class="trial-banner">
-      <div class="container">
-        <div class="trial-banner-content">
-          <div class="trial-banner-badge">
-            <span class="trial-badge-text">無料体験入塾<br />受付中！</span>
-          </div>
-          <div class="trial-banner-main">
-            <span class="trial-weeks">たっぷり<br />2週間</span>
-            <span class="trial-title">無料体験</span>
-            <span class="trial-subtitle">入塾実施中!</span>
-          </div>
-          <p class="trial-banner-description">
-            お申し込みやご相談などは、電話・メールにてお気軽にお問い合わせください
-          </p>
-        </div>
+      <div class="trial-banner-inner">
+        <img :src="banner1" alt="無料体験入塾実施中" class="trial-banner-img" />
+      </div>
+    </section>
+
+    <!-- Mobile Trial Banner -->
+    <section class="mobile-trial-banner">
+      <div class="mobile-trial-content">
+        <span class="mobile-trial-icon">🎒</span>
+        <span class="mobile-trial-label">無料体験</span>
+        <span class="mobile-trial-text">入塾実施中!</span>
       </div>
     </section>
 
@@ -68,10 +71,10 @@
         <h2 class="section-title">授業料・時間割</h2>
 
         <div class="timetable-grid">
-          <!-- Junior High School -->
+          <!-- Junior High School - Top Card -->
           <div class="timetable-card timetable-card-main">
             <div class="timetable-card-image">
-              <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&q=80" alt="中学生" />
+              <img :src="juniorImg" alt="中学生" />
             </div>
             <div class="timetable-card-content">
               <h3 class="timetable-card-title">中学生(中1〜中3)</h3>
@@ -81,52 +84,60 @@
               <ul class="timetable-links">
                 <li>
                   <router-link to="/timetable" class="timetable-link">
-                    中1の授業料/時間割を見る →
+                    中1の授業料/時間割を見る
+                    <span class="arrow">→</span>
                   </router-link>
                 </li>
                 <li>
                   <router-link to="/timetable" class="timetable-link">
-                    中1の授業料/時間割を見る →
+                    中1の授業料/時間割を見る
+                    <span class="arrow">→</span>
                   </router-link>
                 </li>
                 <li>
                   <router-link to="/timetable" class="timetable-link">
-                    中1の授業料/時間割を見る →
+                    中1の授業料/時間割を見る
+                    <span class="arrow">→</span>
                   </router-link>
                 </li>
               </ul>
             </div>
           </div>
 
-          <!-- Elementary School -->
-          <div class="timetable-card">
-            <div class="timetable-card-image">
-              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="小学生" />
+          <!-- Bottom Row: Elementary and High School side by side -->
+          <div class="timetable-bottom-row">
+            <!-- Elementary School -->
+            <div class="timetable-card timetable-card-sub">
+              <div class="timetable-card-image">
+                <img :src="study1" alt="小学生" />
+              </div>
+              <div class="timetable-card-body">
+                <h3 class="timetable-card-title-sub-elementary">小学生</h3>
+                <p class="timetable-card-desc-sub">
+                  学習の習慣化や思考トレーニングを実施。お子様の「できる！！」を増やします
+                </p>
+                <router-link to="/timetable" class="btn-timetable-elementary">
+                  小学生の授業料/時間割を見る
+                  <span class="arrow">→</span>
+                </router-link>
+              </div>
             </div>
-            <h3 class="timetable-card-title text-center">小学生</h3>
-            <p class="timetable-card-description text-center">
-              学習の習慣化や思考トレーニングを実施。お子様の「できる！」を増やします
-            </p>
-            <div class="timetable-card-button">
-              <router-link to="/timetable" class="btn btn-outline">
-                小学生の授業料/時間割を見る →
-              </router-link>
-            </div>
-          </div>
 
-          <!-- High School -->
-          <div class="timetable-card">
-            <div class="timetable-card-image">
-              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80" alt="高校生" />
-            </div>
-            <h3 class="timetable-card-title text-center">高校生</h3>
-            <p class="timetable-card-description text-center">
-              大学受験・定期テスト対策、目標に向かってレベルアップをサポートします
-            </p>
-            <div class="timetable-card-button">
-              <router-link to="/timetable" class="btn btn-outline">
-                高校生の授業料/時間割を見る →
-              </router-link>
+            <!-- High School -->
+            <div class="timetable-card timetable-card-sub">
+              <div class="timetable-card-image">
+                <img :src="highImg" alt="高校生" />
+              </div>
+              <div class="timetable-card-body">
+                <h3 class="timetable-card-title-sub-high">高校生</h3>
+                <p class="timetable-card-desc-sub">
+                  大学受験・定期テスト対策、目標に向かってレベルアップをサポートします
+                </p>
+                <router-link to="/timetable" class="btn-timetable-high">
+                  高校生の授業料/時間割を見る
+                  <span class="arrow">→</span>
+                </router-link>
+              </div>
             </div>
           </div>
         </div>
@@ -135,21 +146,23 @@
 
     <!-- About Section -->
     <section class="about-section">
-      <div class="about-section-inner">
-        <div class="container">
-          <h2 class="section-title">板橋セミナーについて</h2>
-          <div class="about-content">
-            <p>
-              板橋セミナーでは、小学生・中学生・高校生を対象とした学習指導やテスト対策を通して、子供たちの毎日の成長をアシストするための授業を行っております。アットホームな雰囲気で進行される授業の中で、子供たちは日々「頑張ること」と「ルールを守ること」を学んでいます。時として厳しく指導することもありますが、仲間とともに勉強する中で、人として大切なことを学びながら成長できる自立した大人になれるよう指導する様心がけています。
-            </p>
-            <p>
-              板橋セミナーでは、生徒の学習状況に合わせたクラス分けが行われていて、レベルの高い学校を目指したい生徒の為のクラスや学校での勉強をサポートするためのクラスの他、受験対策の為の個別クラスなどを展開しております。また、スタッフ全く担任制の家庭教師であり、読み方・記入方や理解方法などもしっかりと共有し合える体制を行っております。体験入塾も実施しておりますので、是非一度板橋セミナーの授業風景を覗いてみてください。
-            </p>
-            <div class="about-button">
-              <router-link to="/policy" class="btn btn-outline">
-                板橋セミナーの授業方針 →
-              </router-link>
-            </div>
+      <div class="about-wrapper">
+        <div class="about-image">
+          <img :src="study1" alt="板橋セミナー" />
+        </div>
+        <div class="about-content">
+          <h2 class="about-title">板橋セミナーについて</h2>
+          <p>
+            板橋セミナーでは、小学生・中学生・高校生を対象とした学習指導やテスト対策を通して、子供たちの毎日の成長をアシストするための授業を行っております。アットホームな雰囲気で進行される授業の中で、子供たちは日々「頑張ること」と「ルールを守ること」を学んでいます。時として厳しく指導することもありますが、仲間とともに勉強する中で、人として大切なことを学びながら成長できるよう指導する様心がけています。
+          </p>
+          <p>
+            板橋セミナーでは、生徒の学習状況に合わせたクラス分けが行われていて、レベルの高い学校を目指したい生徒の為のクラスや学校での勉強をサポートするためのクラスの他、受験対策の為の個別クラスなどを展開しております。また、スタッフ全くが担任制の家庭教師であり、読み方や指導方法などもしっかりと共有し合える授業を行っております。体験入塾も実施しておりますので、是非一度板橋セミナーの授業風景を覗いてみてください。
+          </p>
+          <div class="about-button">
+            <router-link to="/policy" class="btn-about">
+              板橋セミナーの授業方針
+              <span class="arrow">→</span>
+            </router-link>
           </div>
         </div>
       </div>
@@ -160,18 +173,10 @@
       <div class="container">
         <div class="achievement-grid">
           <router-link to="/achievement" class="achievement-banner">
-            <div class="achievement-banner-icon">
-              <span class="achievement-icon-text">📚</span>
-            </div>
-            <span class="achievement-banner-title">合格実績</span>
-            <span class="achievement-banner-check">✓</span>
+            <img :src="banner2" alt="合格実績" />
           </router-link>
           <router-link to="/achievement" class="achievement-banner">
-            <div class="achievement-banner-icon">
-              <span class="achievement-icon-text">📝</span>
-            </div>
-            <span class="achievement-banner-title">合格体験談</span>
-            <span class="achievement-banner-check">✓</span>
+            <img :src="banner3" alt="合格体験談" />
           </router-link>
         </div>
       </div>
@@ -181,17 +186,20 @@
     <section class="news-section section">
       <div class="container">
         <div class="news-header">
-          <h2 class="section-title">新着情報</h2>
-          <router-link to="/" class="news-all-link btn btn-primary">
-            新着一覧 →
-          </router-link>
+          <h2 class="section-title news-title">新着情報</h2>
+          <div class="news-button-wrapper">
+            <router-link to="/" class="news-all-link">
+              新着一覧
+              <span class="arrow">→</span>
+            </router-link>
+          </div>
         </div>
 
         <div class="news-list">
           <article class="news-item">
             <time class="news-date">2022.06.20</time>
             <div class="news-content">
-              <h3 class="news-title">中学受験の準備は難しい</h3>
+              <h3 class="news-item-title">中学受験の準備は難しい</h3>
               <p class="news-excerpt">
                 梅雨入りとともに、じとじとした雨が降り続く6月となりました。夏の気配を感じつつも、雨に悩まされる日々が続いていますが、皆様楽しくお過ごしください。雨の日が続くと、つい気分...
               </p>
@@ -200,7 +208,7 @@
           <article class="news-item">
             <time class="news-date">2022.06.20</time>
             <div class="news-content">
-              <h3 class="news-title">中学受験の準備は難しい</h3>
+              <h3 class="news-item-title">中学受験の準備は難しい</h3>
               <p class="news-excerpt">
                 梅雨入りとともに、じとじとした雨が降り続く6月となりました。夏の気配を感じつつも、雨に悩まされる日々が続いていますが、皆様楽しくお過ごしください。雨の日が続くと、つい気分...
               </p>
@@ -209,7 +217,7 @@
           <article class="news-item">
             <time class="news-date">2022.06.20</time>
             <div class="news-content">
-              <h3 class="news-title">中学受験の準備は難しい</h3>
+              <h3 class="news-item-title">中学受験の準備は難しい</h3>
               <p class="news-excerpt">
                 梅雨入りとともに、じとじとした雨が降り続く6月となりました。夏の気配を感じつつも、雨に悩まされる日々が続いていますが、皆様楽しくお過ごしください。雨の日が続くと、つい気分...
               </p>
@@ -222,24 +230,56 @@
 </template>
 
 <script setup>
+import topImg from '@/assets/images/top-img.png'
+import study1 from '@/assets/images/study1.png'
+import juniorImg from '@/assets/images/中学生img.png'
+import highImg from '@/assets/images/高校生画像 1.png'
+import banner1 from '@/assets/images/banner1 1.png'
+import banner2 from '@/assets/images/banner2 1.png'
+import banner3 from '@/assets/images/banner3 1.png'
 </script>
 
 <style scoped>
+/* Base - Noto Sans JP */
+.top-page {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: 400px;
-  background: linear-gradient(135deg, rgba(26, 58, 110, 0.9), rgba(26, 58, 110, 0.7)),
-    url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  padding: 60px 20px;
+  height: 420px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .hero-content {
-  max-width: 600px;
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-title {
@@ -248,15 +288,16 @@
 
 .hero-title-line {
   display: block;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #4da3ff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 2.75rem;
+  font-weight: bold;
+  color: #00A0F0;
+  line-height: 1.3;
 }
 
 .hero-description {
-  color: #fff;
-  font-size: 1rem;
+  color: #000000;
+  font-size: 0.9375rem;
+  font-weight: bold;
   line-height: 1.8;
   margin-bottom: 25px;
 }
@@ -268,34 +309,31 @@
 
 .hero-badge {
   display: inline-block;
-  padding: 8px 20px;
+  padding: 6px 18px;
   border-radius: 20px;
   font-size: 0.875rem;
   font-weight: 700;
-  border: 2px solid;
+  border: 2px solid transparent;
 }
 
 .badge-elementary {
-  background-color: #2e8b57;
-  border-color: #2e8b57;
+  background-color: #00A0F0;
   color: #fff;
 }
 
 .badge-junior {
-  background-color: #1a5a9e;
-  border-color: #1a5a9e;
+  background-color: #003C78;
   color: #fff;
 }
 
 .badge-high {
-  background-color: #f4d03f;
-  border-color: #f4d03f;
-  color: #333;
+  background-color: #00A06E;
+  color: #fff;
 }
 
 /* Secondary Nav */
 .secondary-nav {
-  background-color: #40a9ff;
+  background-color: #003C78;
 }
 
 .secondary-nav-list {
@@ -316,138 +354,167 @@
 
 .secondary-nav-list a {
   display: block;
-  padding: 12px 25px;
+  padding: 12px 28px;
   color: #fff;
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
   transition: background-color 0.3s;
 }
 
 .secondary-nav-list a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Mobile Badges */
-.mobile-badges {
+/* Mobile Info Bar */
+.mobile-info-bar {
   display: none;
   background-color: #f5f5f5;
   padding: 15px 20px;
   text-align: center;
 }
 
-.mobile-badges-text {
+.mobile-info-text {
   font-size: 0.875rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
+  margin-bottom: 8px;
 }
 
 .mobile-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background-color: var(--color-primary);
   color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
+}
+
+.badge-green {
+  background-color: #00A0F0;
+}
+
+.badge-blue {
+  background-color: #003C78;
+}
+
+.badge-yellow {
+  background-color: #00A06E;
+}
+
+.mobile-info-schools {
+  font-size: 0.75rem;
+  color: #666;
+  line-height: 1.6;
 }
 
 /* Trial Banner */
 .trial-banner {
-  background: linear-gradient(to right, #1a3a6e, #2a5a9e);
-  padding: 20px 0;
+  background-color: #ffffff;
+  padding: 60px 0;
 }
 
-.trial-banner-content {
+.trial-banner-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.trial-banner-img {
+  display: block;
+  width: 400px;
+  height: auto;
+}
+
+/* Mobile Trial Banner */
+.mobile-trial-banner {
+  display: none;
+  background: linear-gradient(to right, #1a3a6e, #2a5a9e);
+  padding: 12px 20px;
+}
+
+.mobile-trial-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   color: #fff;
 }
 
-.trial-banner-badge {
-  background-color: #e74c3c;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transform: rotate(-5deg);
+.mobile-trial-icon {
+  font-size: 1.25rem;
 }
 
-.trial-badge-text {
-  font-size: 0.75rem;
+.mobile-trial-label {
+  color: #fdd835;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.mobile-trial-text {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Section Common */
+.section {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 1.75rem;
   font-weight: 700;
   text-align: center;
-  line-height: 1.4;
-}
-
-.trial-banner-main {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.trial-weeks {
-  font-size: 0.875rem;
-  line-height: 1.3;
-  color: #4da3ff;
-}
-
-.trial-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #f4d03f;
-}
-
-.trial-subtitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.trial-banner-description {
-  font-size: 0.75rem;
-  max-width: 300px;
+  margin-bottom: 40px;
+  color: #333;
 }
 
 /* Timetable Section */
 .timetable-section {
   background-color: #fff;
+  padding-top: 20px;
 }
 
 .timetable-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.timetable-card {
-  background: #fff;
-  overflow: hidden;
-}
-
+/* Main Card (中学生) - Top */
 .timetable-card-main {
-  grid-row: span 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.timetable-card-image {
-  position: relative;
+  display: flex;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
 
-.timetable-card-image img {
+.timetable-card-main .timetable-card-image {
+  flex: 0 0 50%;
+}
+
+.timetable-card-main .timetable-card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 .timetable-card-content {
-  padding: 30px;
+  flex: 1;
+  padding: 30px 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -456,8 +523,9 @@
 .timetable-card-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: #003C78;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .timetable-card-description {
@@ -465,89 +533,208 @@
   color: #666;
   margin-bottom: 20px;
   line-height: 1.8;
+  text-align: center;
 }
 
 .timetable-links {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .timetable-link {
-  display: block;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background-color: #003C78;
+  border: 2px solid #003C78;
+  color: #fff;
   text-decoration: none;
   font-size: 0.875rem;
-  transition: color 0.3s;
+  transition: all 0.3s;
 }
 
 .timetable-link:hover {
-  color: var(--color-accent);
+  background-color: transparent;
+  color: #003C78;
 }
 
-.timetable-card:not(.timetable-card-main) .timetable-card-image {
-  height: 180px;
+.timetable-link .arrow {
+  transition: color 0.3s;
 }
 
-.timetable-card:not(.timetable-card-main) .timetable-card-title {
-  padding: 20px 20px 10px;
-  margin-bottom: 0;
+.timetable-link:hover .arrow {
+  color: #003C78;
 }
 
-.timetable-card:not(.timetable-card-main) .timetable-card-description {
-  padding: 0 20px;
+/* Bottom Row (小学生・高校生 横並び) */
+.timetable-bottom-row {
+  display: flex;
+  gap: 25px;
 }
 
-.timetable-card-button {
-  padding: 15px 20px 20px;
+.timetable-card-sub {
+  flex: 1;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.timetable-card-sub .timetable-card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.timetable-card-sub .timetable-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.timetable-card-body {
+  padding: 20px;
   text-align: center;
 }
 
-.text-center {
-  text-align: center;
+.timetable-card-title-sub-elementary {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #00A0F0;
+  margin-bottom: 12px;
+}
+
+.timetable-card-title-sub-high {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #00A06E;
+  margin-bottom: 12px;
+}
+
+.timetable-card-desc-sub {
+  font-size: 0.8125rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.btn-timetable-elementary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #00A0F0;
+  border: 2px solid #00A0F0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-timetable-elementary:hover {
+  background-color: transparent;
+  color: #00A0F0;
+}
+
+.btn-timetable-high {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #00A06E;
+  border: 2px solid #00A06E;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-timetable-high:hover {
+  background-color: transparent;
+  color: #00A06E;
+}
+
+.btn-timetable-elementary .arrow,
+.btn-timetable-high .arrow {
+  font-size: 0.875rem;
 }
 
 /* About Section */
 .about-section {
-  background: linear-gradient(rgba(26, 58, 110, 0.85), rgba(26, 58, 110, 0.85)),
-    url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&q=80');
-  background-size: cover;
-  background-position: center;
-  padding: 80px 0;
+  background-color: #F5F7FA;
 }
 
-.about-section .section-title {
-  color: #fff;
+.about-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.about-image {
+  flex: 0 0 50%;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-content {
-  max-width: 800px;
-  margin: 0 auto;
-  color: #fff;
+  flex: 0 0 50%;
+  color: #333;
   font-size: 0.9375rem;
   line-height: 2;
+  padding: 60px 50px;
+  box-sizing: border-box;
+}
+
+.about-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .about-content p {
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 .about-button {
+  margin-top: 35px;
   text-align: center;
-  margin-top: 30px;
 }
 
-.about-button .btn-outline {
-  border-color: #fff;
+.btn-about {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 35px;
+  background-color: #003C78;
+  border: 2px solid #003C78;
   color: #fff;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: all 0.3s;
 }
 
-.about-button .btn-outline:hover {
-  background-color: #fff;
-  color: var(--color-primary);
+.btn-about:hover {
+  background-color: transparent;
+  color: #003C78;
 }
 
 /* Achievement Banners */
+.achievement-banners {
+  padding: 40px 0;
+  background-color: #fff;
+}
+
 .achievement-grid {
   display: flex;
   justify-content: center;
@@ -555,97 +742,91 @@
 }
 
 .achievement-banner {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 20px 30px;
-  background: #fff;
-  border: 2px solid var(--color-primary);
-  text-decoration: none;
-  transition: all 0.3s;
+  display: block;
+  transition: transform 0.3s;
 }
 
 .achievement-banner:hover {
-  background-color: var(--color-primary);
+  transform: translateY(-3px);
 }
 
-.achievement-banner:hover .achievement-banner-title {
-  color: #fff;
-}
-
-.achievement-banner-icon {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.achievement-icon-text {
-  font-size: 2rem;
-}
-
-.achievement-banner-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  transition: color 0.3s;
-}
-
-.achievement-banner-check {
-  width: 24px;
-  height: 24px;
-  background-color: var(--color-primary);
-  color: #fff;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.875rem;
+.achievement-banner img {
+  height: 100px;
+  width: auto;
 }
 
 /* News Section */
-.news-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
+.news-section {
+  background-color: #fff;
 }
 
-.news-header .section-title {
+.news-header {
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.news-title {
   margin-bottom: 0;
+  text-align: center;
+}
+
+.news-button-wrapper {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .news-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 8px 20px;
+  background-color: #003C78;
+  border: 2px solid #003C78;
+  color: #fff;
+  text-decoration: none;
   font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.news-all-link:hover {
+  background-color: transparent;
+  color: #003C78;
 }
 
 .news-list {
-  border-top: 1px solid #ddd;
+  max-width: 900px;
+  margin: 0 auto;
+  border-top: 1px solid #e0e0e0;
 }
 
 .news-item {
   display: flex;
-  padding: 20px 0;
-  border-bottom: 1px solid #ddd;
-  gap: 20px;
+  padding: 25px 0;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 25px;
 }
 
 .news-date {
   font-size: 0.875rem;
   color: #666;
   flex-shrink: 0;
+  min-width: 90px;
 }
 
 .news-content {
   flex: 1;
 }
 
-.news-title {
+.news-item-title {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: #1565c0;
   margin-bottom: 10px;
 }
 
@@ -656,15 +837,13 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .timetable-card-main {
-    grid-column: span 2;
-  }
-}
-
 @media (max-width: 768px) {
   .hero {
-    min-height: 300px;
+    height: auto;
+    min-height: 280px;
+  }
+
+  .hero-content {
     padding: 40px 20px;
   }
 
@@ -673,70 +852,100 @@
   }
 
   .hero-description {
-    font-size: 0.875rem;
+    display: none;
+  }
+
+  .hero-badges {
+    display: none;
   }
 
   .secondary-nav {
     display: none;
   }
 
-  .mobile-badges {
+  .mobile-info-bar {
     display: block;
   }
 
-  .trial-banner-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
+  .trial-banner {
+    display: none;
   }
 
-  .trial-banner-badge {
-    transform: none;
+  .mobile-trial-banner {
+    display: block;
   }
 
-  .trial-banner-main {
-    flex-wrap: wrap;
-    justify-content: center;
+  .section {
+    padding: 40px 0;
   }
 
-  .trial-title {
-    font-size: 1.5rem;
-  }
-
-  .trial-subtitle {
-    font-size: 1.125rem;
-  }
-
-  .timetable-grid {
-    grid-template-columns: 1fr;
+  .section-title {
+    font-size: 1.375rem;
+    margin-bottom: 25px;
   }
 
   .timetable-card-main {
-    grid-column: 1;
-    grid-row: auto;
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .timetable-card-main .timetable-card-image {
+    flex: none;
+    height: 200px;
   }
 
   .timetable-card-content {
     padding: 20px;
   }
 
+  .timetable-card-title {
+    font-size: 1.25rem;
+  }
+
+  .timetable-bottom-row {
+    flex-direction: column;
+  }
+
+  .about-wrapper {
+    flex-direction: column;
+  }
+
+  .about-image {
+    flex: none;
+    height: 250px;
+  }
+
+  .about-content {
+    flex: none;
+    padding: 30px 20px;
+  }
+
   .achievement-grid {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .achievement-banner img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
   }
 
   .news-header {
-    flex-direction: column;
-    gap: 20px;
+    position: static;
+    text-align: center;
   }
 
-  .news-header .section-title {
-    margin-bottom: 0;
+  .news-button-wrapper {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+    text-align: center;
   }
 
   .news-item {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+    padding: 20px 0;
   }
 }
 </style>

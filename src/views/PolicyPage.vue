@@ -1,7 +1,7 @@
 <template>
   <div class="policy-page">
     <!-- Page Header -->
-    <PageHeader title="授業の方針" />
+    <PageHeader title="授業の方針" :backgroundImage="topImg" />
 
     <!-- Secondary Nav -->
     <nav class="secondary-nav">
@@ -39,7 +39,7 @@
         <h2 class="section-title">板橋セミナーの授業方針</h2>
 
         <div class="policy-image">
-          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80" alt="授業風景" />
+          <img :src="policyImg" alt="授業風景" />
         </div>
 
         <div class="policy-points">
@@ -60,7 +60,7 @@
           <div class="policy-point">
             <h3 class="policy-point-title">塾として、子どもの基本姿勢も指導します</h3>
             <p class="policy-point-text">
-              忘れ物をしたら、取りに帰らせます。自分勝手なことをしたら、さちんと謝らせます。小・中学生として、自分の言動に責任を持てるよう、毎日こどもと接しています。
+              忘れ物をしたら、取りに帰らせます。自分勝手なことをしたら、きちんと謝らせます。小・中学生として、自分の言動に責任を持てるよう、毎日こどもと接しています。
             </p>
           </div>
         </div>
@@ -68,13 +68,13 @@
     </section>
 
     <!-- Junior High Section -->
-    <section class="junior-section section bg-gray">
+    <section class="junior-section section">
       <div class="container">
         <h2 class="section-title">中学生の授業について</h2>
 
         <div class="junior-content">
           <div class="junior-image">
-            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="中学生授業" />
+            <img :src="juniorImg" alt="中学生授業" />
           </div>
           <div class="junior-text">
             <p>
@@ -88,9 +88,9 @@
             </p>
 
             <div class="junior-buttons">
-              <button class="btn btn-outline">受験指導</button>
-              <button class="btn btn-outline">テスト対策</button>
-              <button class="btn btn-outline">講義＋個別指導</button>
+              <button class="btn-junior">受験指導</button>
+              <button class="btn-junior">テスト対策</button>
+              <button class="btn-junior">講義＋個別指導</button>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@
         <div class="elementary-grid">
           <div class="elementary-card">
             <div class="elementary-card-image">
-              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" alt="曜日選択" />
+              <img :src="scheduleImg" alt="曜日選択" />
               <span class="elementary-card-number">01</span>
             </div>
             <h3 class="elementary-card-title">曜日選択ができる時間割</h3>
@@ -116,7 +116,7 @@
 
           <div class="elementary-card">
             <div class="elementary-card-image">
-              <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&q=80" alt="達成度" />
+              <img :src="achievementImg" alt="達成度" />
               <span class="elementary-card-number">02</span>
             </div>
             <h3 class="elementary-card-title">達成度を追及</h3>
@@ -127,7 +127,7 @@
 
           <div class="elementary-card">
             <div class="elementary-card-image">
-              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80" alt="クラス分け" />
+              <img :src="classImg" alt="クラス分け" />
               <span class="elementary-card-number">03</span>
             </div>
             <h3 class="elementary-card-title">クラス分けを実施</h3>
@@ -144,12 +144,41 @@
 <script setup>
 import PageHeader from '../components/PageHeader.vue'
 import PageBreadcrumb from '../components/PageBreadcrumb.vue'
+import topImg from '@/assets/images/top-img.png'
+import policyImg from '@/assets/images/北摂セミナーの授業方針画像.png'
+import juniorImg from '@/assets/images/中学生img.png'
+import scheduleImg from '@/assets/images/曜日選択ができる時間割画像.png'
+import achievementImg from '@/assets/images/達成度を追及画像.png'
+import classImg from '@/assets/images/クラス分けを実施画像.png'
 </script>
 
 <style scoped>
+.policy-page {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* Section Common */
+.section {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
 /* Secondary Nav */
 .secondary-nav {
-  background-color: var(--color-primary);
+  background-color: #003C78;
 }
 
 .secondary-nav-list {
@@ -183,6 +212,10 @@ import PageBreadcrumb from '../components/PageBreadcrumb.vue'
 }
 
 /* About Section */
+.about-section {
+  background-color: #fff;
+}
+
 .about-content {
   max-width: 900px;
   margin: 0 auto;
@@ -196,14 +229,17 @@ import PageBreadcrumb from '../components/PageBreadcrumb.vue'
 }
 
 /* Policy Section */
+.policy-section {
+  background-color: #fff;
+}
+
 .policy-image {
   max-width: 700px;
-  margin: 0 auto 40px;
+  margin: 0 auto 50px;
 }
 
 .policy-image img {
   width: 100%;
-  border-radius: 4px;
 }
 
 .policy-points {
@@ -212,20 +248,20 @@ import PageBreadcrumb from '../components/PageBreadcrumb.vue'
 }
 
 .policy-point {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   padding-left: 20px;
-  border-left: 4px solid var(--color-primary);
+  border-left: 4px solid #003C78;
 }
 
 .policy-point-title {
   font-size: 1.125rem;
   font-weight: 700;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .policy-point-title .highlight {
-  color: var(--color-primary);
+  color: #003C78;
 }
 
 .policy-point-text {
@@ -235,8 +271,8 @@ import PageBreadcrumb from '../components/PageBreadcrumb.vue'
 }
 
 /* Junior Section */
-.bg-gray {
-  background-color: #f5f5f5;
+.junior-section {
+  background-color: #f8f9fa;
 }
 
 .junior-content {
@@ -246,12 +282,11 @@ import PageBreadcrumb from '../components/PageBreadcrumb.vue'
 }
 
 .junior-image {
-  flex: 0 0 300px;
+  flex: 0 0 320px;
 }
 
 .junior-image img {
   width: 100%;
-  border-radius: 4px;
 }
 
 .junior-text {
@@ -260,19 +295,42 @@ import PageBreadcrumb from '../components/PageBreadcrumb.vue'
 
 .junior-text p {
   font-size: 0.9375rem;
-  line-height: 1.8;
-  margin-bottom: 15px;
+  line-height: 1.9;
+  margin-bottom: 18px;
   color: #333;
 }
 
 .junior-buttons {
   display: flex;
   gap: 15px;
-  margin-top: 25px;
+  margin-top: 30px;
   flex-wrap: wrap;
 }
 
+.btn-junior {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  background-color: #fff;
+  border: 2px solid #003C78;
+  color: #003C78;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-junior:hover {
+  background-color: #003C78;
+  color: #fff;
+}
+
 /* Elementary Section */
+.elementary-section {
+  background-color: #fff;
+}
+
 .elementary-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -299,31 +357,42 @@ import PageBreadcrumb from '../components/PageBreadcrumb.vue'
   position: absolute;
   bottom: 0;
   left: 0;
-  background: var(--color-primary);
+  background: rgba(0, 60, 120, 0.85);
   color: #fff;
-  padding: 10px 20px;
-  font-size: 1.5rem;
+  padding: 12px 25px;
+  font-size: 1.75rem;
   font-weight: 700;
+  font-style: italic;
 }
 
 .elementary-card-title {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-primary);
-  padding: 20px 15px 10px;
+  color: #003C78;
+  padding: 20px 0 12px;
+  text-align: center;
 }
 
 .elementary-card-text {
   font-size: 0.875rem;
   color: #666;
   line-height: 1.8;
-  padding: 0 15px 20px;
+  padding: 0 10px 20px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .secondary-nav {
     display: none;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 1.375rem;
+    margin-bottom: 25px;
   }
 
   .junior-content {
@@ -339,12 +408,29 @@ import PageBreadcrumb from '../components/PageBreadcrumb.vue'
     grid-template-columns: 1fr;
   }
 
+  .elementary-card {
+    border: 1px solid #e0e0e0;
+  }
+
   .junior-buttons {
     flex-direction: column;
   }
 
-  .junior-buttons .btn {
+  .btn-junior {
     width: 100%;
+  }
+
+  .about-content {
+    font-size: 0.875rem;
+    line-height: 1.8;
+  }
+
+  .policy-point-title {
+    font-size: 1rem;
+  }
+
+  .policy-point-text {
+    font-size: 0.875rem;
   }
 }
 </style>
