@@ -175,7 +175,7 @@ import classImg from '@/assets/images/クラス分けを実施画像.png'
   }
 
   .junior-buttons {
-    display: none;
+    display: none !important;
   }
 }
 
