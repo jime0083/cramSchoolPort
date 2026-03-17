@@ -50,7 +50,14 @@
 .footer-inner {
   max-width: 980px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 0;
+}
+
+@media (max-width: 980px) {
+  .footer-inner {
+    width: 90%;
+    max-width: none;
+  }
 }
 
 .footer-main {

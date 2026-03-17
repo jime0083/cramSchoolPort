@@ -628,15 +628,16 @@ import banner3 from '@/assets/images/banner3 1.png'
 }
 
 .btn-timetable-elementary {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
+  gap: 10px;
+  padding: 12px 20px;
   background-color: #00A0F0;
   border: 2px solid #00A0F0;
   color: #fff;
   text-decoration: none;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 500;
   transition: all 0.3s;
 }
@@ -647,15 +648,16 @@ import banner3 from '@/assets/images/banner3 1.png'
 }
 
 .btn-timetable-high {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
+  gap: 10px;
+  padding: 12px 20px;
   background-color: #00A06E;
   border: 2px solid #00A06E;
   color: #fff;
   text-decoration: none;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 500;
   transition: all 0.3s;
 }
