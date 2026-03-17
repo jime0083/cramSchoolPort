@@ -416,7 +416,7 @@ import banner3 from "@/assets/images/banner3 1.png";
 /* Trial Banner */
 .trial-banner {
   background-color: #ffffff;
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .trial-banner-inner {
@@ -465,7 +465,7 @@ import banner3 from "@/assets/images/banner3 1.png";
 
 /* Section Common */
 .section {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .container {

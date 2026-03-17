@@ -159,7 +159,7 @@ import classImg from '@/assets/images/クラス分けを実施画像.png'
 
 /* Section Common */
 .section {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .container {

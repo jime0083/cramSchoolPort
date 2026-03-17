@@ -143,7 +143,7 @@ const handleSubmit = () => {
 <style scoped>
 /* Section & Container - グリッド統一 */
 .section {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .container {
@@ -302,6 +302,10 @@ const handleSubmit = () => {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .section {
+    padding: 20px 0;
+  }
+
   .secondary-nav {
     display: none;
   }
