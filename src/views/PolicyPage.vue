@@ -173,6 +173,10 @@ import classImg from '@/assets/images/クラス分けを実施画像.png'
     width: 90%;
     max-width: none;
   }
+
+  .junior-buttons {
+    display: none;
+  }
 }
 
 .section-title {
