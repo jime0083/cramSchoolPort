@@ -406,7 +406,7 @@ const records = [
 
   .testimonial-image:nth-child(2),
   .testimonial-image:nth-child(3) {
-    display: none;
+    display: none !important;
   }
 
   .testimonial-item {
