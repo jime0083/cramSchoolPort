@@ -486,7 +486,7 @@ import banner3 from '@/assets/images/banner3 1.png'
 
   .about-image {
     flex: none;
-    height: 300px;
+    height: 250px;
   }
 
   .about-content {
