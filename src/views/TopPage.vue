@@ -884,7 +884,7 @@ import banner3 from "@/assets/images/banner3 1.png";
   }
 
   .section {
-    padding: 40px 0;
+    padding: 20px 0;
   }
 
   .section-title {
