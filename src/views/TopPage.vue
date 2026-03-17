@@ -230,19 +230,19 @@
 </template>
 
 <script setup>
-import topImg from '@/assets/images/top-img.png'
-import study1 from '@/assets/images/study1.png'
-import juniorImg from '@/assets/images/中学生img.png'
-import highImg from '@/assets/images/高校生画像 1.png'
-import banner1 from '@/assets/images/banner1 1.png'
-import banner2 from '@/assets/images/banner2 1.png'
-import banner3 from '@/assets/images/banner3 1.png'
+import topImg from "@/assets/images/top-img.png";
+import study1 from "@/assets/images/study1.png";
+import juniorImg from "@/assets/images/中学生img.png";
+import highImg from "@/assets/images/高校生画像 1.png";
+import banner1 from "@/assets/images/banner1 1.png";
+import banner2 from "@/assets/images/banner2 1.png";
+import banner3 from "@/assets/images/banner3 1.png";
 </script>
 
 <style scoped>
 /* Base - Noto Sans JP */
 .top-page {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 /* Hero Section */
@@ -290,7 +290,7 @@ import banner3 from '@/assets/images/banner3 1.png'
   display: block;
   font-size: 2.75rem;
   font-weight: bold;
-  color: #00A0F0;
+  color: #00a0f0;
   line-height: 1.3;
 }
 
@@ -317,23 +317,23 @@ import banner3 from '@/assets/images/banner3 1.png'
 }
 
 .badge-elementary {
-  background-color: #00A0F0;
+  background-color: #00a0f0;
   color: #fff;
 }
 
 .badge-junior {
-  background-color: #003C78;
+  background-color: #003c78;
   color: #fff;
 }
 
 .badge-high {
-  background-color: #00A06E;
+  background-color: #00a06e;
   color: #fff;
 }
 
 /* Secondary Nav */
 .secondary-nav {
-  background-color: #003C78;
+  background-color: #003c78;
 }
 
 .secondary-nav-list {
@@ -396,15 +396,15 @@ import banner3 from '@/assets/images/banner3 1.png'
 }
 
 .badge-green {
-  background-color: #00A0F0;
+  background-color: #00a0f0;
 }
 
 .badge-blue {
-  background-color: #003C78;
+  background-color: #003c78;
 }
 
 .badge-yellow {
-  background-color: #00A06E;
+  background-color: #00a06e;
 }
 
 .mobile-info-schools {
@@ -489,6 +489,10 @@ import banner3 from '@/assets/images/banner3 1.png'
     height: 250px;
   }
 
+  .about-image img {
+    height: 250px !important;
+  }
+
   .about-content {
     flex: none;
     padding: 40px 30px;
@@ -544,7 +548,7 @@ import banner3 from '@/assets/images/banner3 1.png'
 .timetable-card-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #003C78;
+  color: #003c78;
   margin-bottom: 15px;
   text-align: center;
 }
@@ -570,8 +574,8 @@ import banner3 from '@/assets/images/banner3 1.png'
   align-items: center;
   gap: 10px;
   padding: 12px 20px;
-  background-color: #003C78;
-  border: 2px solid #003C78;
+  background-color: #003c78;
+  border: 2px solid #003c78;
   color: #fff;
   text-decoration: none;
   font-size: 0.875rem;
@@ -580,7 +584,7 @@ import banner3 from '@/assets/images/banner3 1.png'
 
 .timetable-link:hover {
   background-color: transparent;
-  color: #003C78;
+  color: #003c78;
 }
 
 .timetable-link .arrow {
@@ -588,7 +592,7 @@ import banner3 from '@/assets/images/banner3 1.png'
 }
 
 .timetable-link:hover .arrow {
-  color: #003C78;
+  color: #003c78;
 }
 
 /* Bottom Row (小学生・高校生 横並び) */
@@ -623,14 +627,14 @@ import banner3 from '@/assets/images/banner3 1.png'
 .timetable-card-title-sub-elementary {
   font-size: 1.375rem;
   font-weight: 700;
-  color: #00A0F0;
+  color: #00a0f0;
   margin-bottom: 12px;
 }
 
 .timetable-card-title-sub-high {
   font-size: 1.375rem;
   font-weight: 700;
-  color: #00A06E;
+  color: #00a06e;
   margin-bottom: 12px;
 }
 
@@ -647,8 +651,8 @@ import banner3 from '@/assets/images/banner3 1.png'
   align-items: center;
   gap: 10px;
   padding: 12px 20px;
-  background-color: #00A0F0;
-  border: 2px solid #00A0F0;
+  background-color: #00a0f0;
+  border: 2px solid #00a0f0;
   color: #fff;
   text-decoration: none;
   font-size: 0.875rem;
@@ -658,7 +662,7 @@ import banner3 from '@/assets/images/banner3 1.png'
 
 .btn-timetable-elementary:hover {
   background-color: transparent;
-  color: #00A0F0;
+  color: #00a0f0;
 }
 
 .btn-timetable-high {
@@ -667,8 +671,8 @@ import banner3 from '@/assets/images/banner3 1.png'
   align-items: center;
   gap: 10px;
   padding: 12px 20px;
-  background-color: #00A06E;
-  border: 2px solid #00A06E;
+  background-color: #00a06e;
+  border: 2px solid #00a06e;
   color: #fff;
   text-decoration: none;
   font-size: 0.875rem;
@@ -678,7 +682,7 @@ import banner3 from '@/assets/images/banner3 1.png'
 
 .btn-timetable-high:hover {
   background-color: transparent;
-  color: #00A06E;
+  color: #00a06e;
 }
 
 .btn-timetable-elementary .arrow,
@@ -688,7 +692,7 @@ import banner3 from '@/assets/images/banner3 1.png'
 
 /* About Section */
 .about-section {
-  background-color: #F5F7FA;
+  background-color: #f5f7fa;
 }
 
 .about-wrapper {
@@ -738,8 +742,8 @@ import banner3 from '@/assets/images/banner3 1.png'
   align-items: center;
   gap: 10px;
   padding: 14px 35px;
-  background-color: #003C78;
-  border: 2px solid #003C78;
+  background-color: #003c78;
+  border: 2px solid #003c78;
   color: #fff;
   text-decoration: none;
   font-size: 0.9375rem;
@@ -749,7 +753,7 @@ import banner3 from '@/assets/images/banner3 1.png'
 
 .btn-about:hover {
   background-color: transparent;
-  color: #003C78;
+  color: #003c78;
 }
 
 /* Achievement Banners */
@@ -808,8 +812,8 @@ import banner3 from '@/assets/images/banner3 1.png'
   align-items: center;
   gap: 8px;
   padding: 8px 20px;
-  background-color: #003C78;
-  border: 2px solid #003C78;
+  background-color: #003c78;
+  border: 2px solid #003c78;
   color: #fff;
   text-decoration: none;
   font-size: 0.875rem;
@@ -819,7 +823,7 @@ import banner3 from '@/assets/images/banner3 1.png'
 
 .news-all-link:hover {
   background-color: transparent;
-  color: #003C78;
+  color: #003c78;
 }
 
 .news-list {
@@ -863,6 +867,10 @@ import banner3 from '@/assets/images/banner3 1.png'
 @media (max-width: 770px) {
   .trial-banner {
     display: none;
+  }
+
+  .mobile-trial-banner {
+    display: none !important;
   }
 
   .news-button-wrapper {
