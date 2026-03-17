@@ -141,6 +141,17 @@ const handleSubmit = () => {
 </script>
 
 <style scoped>
+/* Section & Container - グリッド統一 */
+.section {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0;
+}
+
 /* Secondary Nav */
 .secondary-nav {
   background-color: var(--color-primary);
@@ -206,9 +217,9 @@ const handleSubmit = () => {
   margin-bottom: 10px;
 }
 
-/* Form */
+/* Form - グリッド統一: コンテナ幅いっぱい */
 .contact-form {
-  max-width: 800px;
+  /* 980px container width */
 }
 
 .form-table {
@@ -286,6 +297,10 @@ const handleSubmit = () => {
 @media (max-width: 768px) {
   .secondary-nav {
     display: none;
+  }
+
+  .container {
+    padding: 0 15px;
   }
 
   .form-row {
