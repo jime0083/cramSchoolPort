@@ -206,6 +206,13 @@ const records = [
   padding: 0;
 }
 
+@media (max-width: 980px) {
+  .container {
+    width: 90%;
+    max-width: none;
+  }
+}
+
 .section-title {
   font-size: 1.75rem;
   font-weight: 700;

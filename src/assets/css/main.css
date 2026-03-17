@@ -267,7 +267,16 @@ th {
   background-color: var(--color-gray-light);
 }
 
-/* Responsive */
+/* Responsive - 980px以下 */
+@media (max-width: 980px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+/* Responsive - 768px以下 */
 @media (max-width: 768px) {
   html {
     font-size: 14px;

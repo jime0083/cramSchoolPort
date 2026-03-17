@@ -152,6 +152,13 @@ const handleSubmit = () => {
   padding: 0;
 }
 
+@media (max-width: 980px) {
+  .container {
+    width: 90%;
+    max-width: none;
+  }
+}
+
 /* Secondary Nav */
 .secondary-nav {
   background-color: var(--color-primary);
