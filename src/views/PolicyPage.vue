@@ -382,6 +382,13 @@ import classImg from '@/assets/images/クラス分けを実施画像.png'
 }
 
 /* Responsive */
+@media (max-width: 786px) {
+  .junior-image img {
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
 @media (max-width: 768px) {
   .secondary-nav {
     display: none;
