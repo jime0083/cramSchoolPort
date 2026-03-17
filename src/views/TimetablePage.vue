@@ -82,13 +82,13 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td data-label="授業時間">
                     <p>前半：16:45〜17:35（水17:00〜17:50）</p>
                     <p>後半：17:40〜18:30（水17:55〜18:45）</p>
                   </td>
-                  <td>国語・算数・英語</td>
-                  <td>10,000円</td>
-                  <td>
+                  <td data-label="対象科目">国語・算数・英語</td>
+                  <td data-label="入塾登録料">10,000円</td>
+                  <td data-label="授業料">
                     <p>週1回　7,000円</p>
                     <p>週2回以上　13,000円</p>
                   </td>
@@ -151,14 +151,14 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td data-label="授業時間">
                     <p>前半：19:00〜20:10</p>
                     <p>後半：20:10〜21:10</p>
                     <p>補講：21:10〜21:30</p>
                   </td>
-                  <td>英語・数学・国語・理科・<br />社会・特別</td>
-                  <td>10,000円</td>
-                  <td>
+                  <td data-label="対象科目">英語・数学・国語・理科・<br />社会・特別</td>
+                  <td data-label="入塾登録料">10,000円</td>
+                  <td data-label="授業料">
                     <p>週1回　10,500円</p>
                     <p>週2回　17,500円</p>
                     <p>週3回　23,500円</p>
@@ -229,14 +229,14 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td data-label="授業時間">
                     <p>前半：19:00〜20:10</p>
                     <p>後半：20:20〜21:30</p>
                     <p>補講：21:30〜</p>
                   </td>
-                  <td>英語・数学・国語・理科・<br />社会・特別</td>
-                  <td>10,000円</td>
-                  <td>
+                  <td data-label="対象科目">英語・数学・国語・理科・<br />社会・特別</td>
+                  <td data-label="入塾登録料">10,000円</td>
+                  <td data-label="授業料">
                     <p>週1回　11,500円</p>
                     <p>週2回　18,500円</p>
                     <p>週3回　26,500円</p>
@@ -336,14 +336,14 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td data-label="授業時間">
                     <p>前半：19:00〜20:15</p>
                     <p>後半：20:25〜21:40</p>
                     <p>補講：21:45〜21:15</p>
                   </td>
-                  <td>英語・数学・国語・理科・<br />社会・特別</td>
-                  <td>10,000円</td>
-                  <td>
+                  <td data-label="対象科目">英語・数学・国語・理科・<br />社会・特別</td>
+                  <td data-label="入塾登録料">10,000円</td>
+                  <td data-label="授業料">
                     <p>週2回　22,500円</p>
                     <p>週3回　30,500円</p>
                     <p>週4回以上　37,500円</p>
@@ -410,9 +410,9 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>20:30〜22:30</td>
-                  <td>10,000円</td>
-                  <td>週2〜6回　22,500円</td>
+                  <td data-label="授業時間">20:30〜22:30</td>
+                  <td data-label="入塾登録料">10,000円</td>
+                  <td data-label="授業料">週2〜6回　22,500円</td>
                 </tr>
               </tbody>
             </table>
@@ -714,21 +714,31 @@ const scrollToSection = (id) => {
     flex-direction: column;
   }
 
-  .details-table th,
+  .details-table thead {
+    display: none;
+  }
+
+  .details-table tbody tr {
+    display: block;
+  }
+
   .details-table td {
     display: block;
     width: 100%;
     border: none;
     border-bottom: 1px solid #ddd;
-  }
-
-  .details-table th {
+    padding: 15px;
     text-align: left;
   }
 
-  .details-table tr {
+  .details-table td::before {
+    content: attr(data-label);
     display: block;
-    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff;
+    background-color: var(--color-primary);
+    padding: 10px 15px;
+    margin: -15px -15px 10px -15px;
   }
 }
 </style>
