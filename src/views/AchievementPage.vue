@@ -404,6 +404,11 @@ const records = [
     flex-direction: column;
   }
 
+  .testimonial-image:nth-child(2),
+  .testimonial-image:nth-child(3) {
+    display: none;
+  }
+
   .testimonial-item {
     padding: 20px;
   }

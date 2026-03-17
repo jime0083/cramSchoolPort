@@ -156,7 +156,9 @@
                     <p>後半：20:10〜21:10</p>
                     <p>補講：21:10〜21:30</p>
                   </td>
-                  <td data-label="対象科目">英語・数学・国語・理科・<br />社会・特別</td>
+                  <td data-label="対象科目">
+                    英語・数学・国語・理科・<br />社会・特別
+                  </td>
                   <td data-label="入塾登録料">10,000円</td>
                   <td data-label="授業料">
                     <p>週1回　10,500円</p>
@@ -172,10 +174,14 @@
           <div class="schedule-notes">
             <p>【備考】</p>
             <ul>
-              <li>●通年テキスト代・集中講座費用・塾内テスト代（年3回）・五ツ木模試代（中3）等が必要経費としてかかります。</li>
+              <li>
+                ●通年テキスト代・集中講座費用・塾内テスト代（年3回）・五ツ木模試代（中3）等が必要経費としてかかります。
+              </li>
               <li>●兄弟・姉妹割引（2割引）の制度もございます。</li>
               <li>●特別は苦手な強化を個別に指導いたします。</li>
-              <li>●テスト期間中は各学校のテスト内容に沿った対策授業に変更致します。</li>
+              <li>
+                ●テスト期間中は各学校のテスト内容に沿った対策授業に変更致します。
+              </li>
             </ul>
           </div>
         </div>
@@ -234,7 +240,9 @@
                     <p>後半：20:20〜21:30</p>
                     <p>補講：21:30〜</p>
                   </td>
-                  <td data-label="対象科目">英語・数学・国語・理科・<br />社会・特別</td>
+                  <td data-label="対象科目">
+                    英語・数学・国語・理科・<br />社会・特別
+                  </td>
                   <td data-label="入塾登録料">10,000円</td>
                   <td data-label="授業料">
                     <p>週1回　11,500円</p>
@@ -250,10 +258,14 @@
           <div class="schedule-notes">
             <p>【備考】</p>
             <ul>
-              <li>●通年テキスト代・集中講座費用・塾内テスト代（年3回）・五ツ木模試代（中3）等が必要経費としてかかります。</li>
+              <li>
+                ●通年テキスト代・集中講座費用・塾内テスト代（年3回）・五ツ木模試代（中3）等が必要経費としてかかります。
+              </li>
               <li>●兄弟・姉妹割引（2割引）の制度もございます。</li>
               <li>●特別は苦手な強化を個別に指導いたします。</li>
-              <li>●テスト期間中は各学校のテスト内容に沿った対策授業に変更致します。</li>
+              <li>
+                ●テスト期間中は各学校のテスト内容に沿った対策授業に変更致します。
+              </li>
             </ul>
           </div>
         </div>
@@ -341,7 +353,9 @@
                     <p>後半：20:25〜21:40</p>
                     <p>補講：21:45〜21:15</p>
                   </td>
-                  <td data-label="対象科目">英語・数学・国語・理科・<br />社会・特別</td>
+                  <td data-label="対象科目">
+                    英語・数学・国語・理科・<br />社会・特別
+                  </td>
                   <td data-label="入塾登録料">10,000円</td>
                   <td data-label="授業料">
                     <p>週2回　22,500円</p>
@@ -356,10 +370,14 @@
           <div class="schedule-notes">
             <p>【備考】</p>
             <ul>
-              <li>●通年テキスト代・集中講座費用・塾内テスト代（年3回）・五ツ木模試代（中3）等が必要経費としてかかります。</li>
+              <li>
+                ●通年テキスト代・集中講座費用・塾内テスト代（年3回）・五ツ木模試代（中3）等が必要経費としてかかります。
+              </li>
               <li>●兄弟・姉妹割引（2割引）の制度もございます。</li>
               <li>●特別は苦手な強化を個別に指導いたします。</li>
-              <li>●テスト期間中は各学校のテスト内容に沿った対策授業に変更致します。</li>
+              <li>
+                ●テスト期間中は各学校のテスト内容に沿った対策授業に変更致します。
+              </li>
             </ul>
           </div>
         </div>
@@ -428,29 +446,29 @@
 </template>
 
 <script setup>
-import PageHeader from '../components/PageHeader.vue'
-import PageBreadcrumb from '../components/PageBreadcrumb.vue'
-import topImg from '@/assets/images/top-img.png'
+import PageHeader from "../components/PageHeader.vue";
+import PageBreadcrumb from "../components/PageBreadcrumb.vue";
+import topImg from "@/assets/images/top-img.png";
 
 const tabs = [
-  { id: 'elementary', name: '小学生' },
-  { id: 'junior1', name: '中学1年生' },
-  { id: 'junior2', name: '中学2年生' },
-  { id: 'junior3', name: '中学3年生' },
-  { id: 'high', name: '高校生' }
-]
+  { id: "elementary", name: "小学生" },
+  { id: "junior1", name: "中学1年生" },
+  { id: "junior2", name: "中学2年生" },
+  { id: "junior3", name: "中学3年生" },
+  { id: "high", name: "高校生" },
+];
 
 const scrollToSection = (id) => {
-  const element = document.getElementById(id)
+  const element = document.getElementById(id);
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
   }
-}
+};
 </script>
 
 <style scoped>
 .timetable-page {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 /* Section Common */
@@ -473,7 +491,7 @@ const scrollToSection = (id) => {
 
 /* Secondary Nav */
 .secondary-nav {
-  background-color: #003C78;
+  background-color: #003c78;
 }
 
 .secondary-nav-list {
@@ -516,7 +534,7 @@ const scrollToSection = (id) => {
   display: flex;
   justify-content: center;
   gap: 0;
-  border: 2px solid #003C78;
+  border: 2px solid #003c78;
   border-radius: 0;
   overflow: hidden;
 }
@@ -526,8 +544,8 @@ const scrollToSection = (id) => {
   padding: 18px 20px;
   background: #fff;
   border: none;
-  border-right: 2px solid #003C78;
-  color: #003C78;
+  border-right: 2px solid #003c78;
+  color: #003c78;
   font-size: 0.9375rem;
   font-weight: 500;
   cursor: pointer;
@@ -539,7 +557,7 @@ const scrollToSection = (id) => {
 }
 
 .tab-btn:hover {
-  background-color: #003C78;
+  background-color: #003c78;
   color: #fff;
 }
 
@@ -558,7 +576,6 @@ const scrollToSection = (id) => {
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 30px;
   color: #333;
 }
 
@@ -570,8 +587,8 @@ const scrollToSection = (id) => {
 .schedule-year {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #003C78;
-  border-left: 4px solid #003C78;
+  color: #003c78;
+  border-left: 4px solid #003c78;
   padding-left: 15px;
   margin-bottom: 20px;
 }
@@ -618,7 +635,7 @@ const scrollToSection = (id) => {
 }
 
 .schedule-table th {
-  background-color: #003C78;
+  background-color: #003c78;
   color: #fff;
   font-weight: 500;
 }
@@ -640,7 +657,7 @@ const scrollToSection = (id) => {
 }
 
 .details-table th {
-  background-color: #003C78;
+  background-color: #003c78;
   color: #fff;
   font-weight: 500;
   text-align: center;
@@ -698,7 +715,7 @@ const scrollToSection = (id) => {
 
   .tab-btn {
     border-right: none;
-    border-bottom: 2px solid #003C78;
+    border-bottom: 2px solid #003c78;
   }
 
   .tab-btn:last-child {
