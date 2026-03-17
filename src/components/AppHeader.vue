@@ -80,7 +80,6 @@
           <li><router-link to="/achievement" @click="closeMenu">合格体験談</router-link></li>
           <li><router-link to="/overview" @click="closeMenu">塾概要</router-link></li>
           <li><router-link to="/contact" @click="closeMenu">お問い合わせ</router-link></li>
-          <li><router-link to="/" @click="closeMenu">新着情報</router-link></li>
           <li><router-link to="/" @click="closeMenu">サイトマップ</router-link></li>
           <li><router-link to="/" @click="closeMenu">プライバシーポリシー</router-link></li>
         </ul>

@@ -479,6 +479,20 @@ import banner3 from '@/assets/images/banner3 1.png'
     width: 90%;
     max-width: none;
   }
+
+  .about-wrapper {
+    flex-direction: column;
+  }
+
+  .about-image {
+    flex: none;
+    height: 300px;
+  }
+
+  .about-content {
+    flex: none;
+    padding: 40px 30px;
+  }
 }
 
 .section-title {
@@ -846,6 +860,16 @@ import banner3 from '@/assets/images/banner3 1.png'
 }
 
 /* Responsive */
+@media (max-width: 770px) {
+  .trial-banner {
+    display: none;
+  }
+
+  .news-button-wrapper {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     height: auto;
