@@ -24,9 +24,7 @@
         <h2 class="section-title">板橋セミナーについて</h2>
         <div class="about-content">
           <p>
-            板橋セミナーは東京都板橋区にある学習塾で、小学生・中学生・高校生を対象とした学習指導やテスト対策を通して、子供たちの毎日の成長をアシストするための授業を行っております。時として厳しく指導することもありますが、仲間とともに勉強する中で「頑張ること」と「ルールを守ること」といった人として大切なことを学びながら成長できるよう指導する様心がけています。
-          </p>
-          <p>
+            板橋セミナーは東京都板橋区にある学習塾で、小学生・中学生・高校生を対象とした学習指導やテスト対策を通して、子供たちの毎日の成長をアシストするための授業を行っております。時として厳しく指導することもありますが、仲間とともに勉強する中で「頑張ること」と「ルールを守ること」といった人として大切なことを学びながら成長できるよう指導する様心がけています。<br />
             生徒の学習状況に合わせたクラス分けや個別指導で、受験指導から定期テスト対策まで幅広くサポートします。
           </p>
           <p>
@@ -35,50 +33,49 @@
         </div>
 
         <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1522748906645-95d8adfd52c7?w=800&q=80" alt="桜" />
+          <img :src="schoolImg" alt="板橋セミナー外観" />
         </div>
       </div>
     </section>
 
     <!-- Company Info Section -->
-    <section class="info-section section bg-gray">
+    <section class="info-section section">
       <div class="container">
         <h2 class="info-title">塾概要</h2>
+        <div class="info-title-line"></div>
 
-        <div class="info-table-wrapper">
-          <table class="info-table">
-            <tbody>
-              <tr>
-                <th>会社名</th>
-                <td>株式会社板橋セミナー</td>
-              </tr>
-              <tr>
-                <th>代表者</th>
-                <td>坂下 浩行</td>
-              </tr>
-              <tr>
-                <th>住所</th>
-                <td>〒000-0000 東京都板橋区〇〇町11-2</td>
-              </tr>
-              <tr>
-                <th>電話番号</th>
-                <td>000-000-0000（111-111-1111）</td>
-              </tr>
-              <tr>
-                <th>FAX</th>
-                <td>000-000-0000</td>
-              </tr>
-              <tr>
-                <th>営業時間</th>
-                <td>16:30〜23:00</td>
-              </tr>
-              <tr>
-                <th>定休日</th>
-                <td>日・祝</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="info-table">
+          <tbody>
+            <tr>
+              <th>会社名</th>
+              <td>株式会社板橋セミナー</td>
+            </tr>
+            <tr>
+              <th>代表者</th>
+              <td>板下 浩行</td>
+            </tr>
+            <tr>
+              <th>住所</th>
+              <td>〒000-0000 東京都板橋区〇〇町11-2</td>
+            </tr>
+            <tr>
+              <th>電話番号</th>
+              <td>000-000-0000（111-111-1111）</td>
+            </tr>
+            <tr>
+              <th>FAX</th>
+              <td>000-000-0000</td>
+            </tr>
+            <tr>
+              <th>営業時間</th>
+              <td>16:30〜23:00</td>
+            </tr>
+            <tr>
+              <th>定休日</th>
+              <td>日・祝</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -91,8 +88,8 @@
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.5!2d139.7!3d35.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQ1JzAwLjAiTiAxMznCsDQyJzAwLjAiRQ!5e0!3m2!1sja!2sjp!4v1234567890"
             width="100%"
-            height="400"
-            style="border:0;"
+            height="450"
+            style="border: 0"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -104,12 +101,32 @@
 </template>
 
 <script setup>
-import PageHeader from '../components/PageHeader.vue'
-import PageBreadcrumb from '../components/PageBreadcrumb.vue'
-import topImg from '@/assets/images/top-img.png'
+import PageHeader from "../components/PageHeader.vue";
+import PageBreadcrumb from "../components/PageBreadcrumb.vue";
+import topImg from "@/assets/images/top-img.png";
+import schoolImg from "@/assets/images/合格体験談画像2.png";
 </script>
 
 <style scoped>
+/* Section & Container - グリッド統一 */
+.section {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
 /* Secondary Nav */
 .secondary-nav {
   background-color: var(--color-primary);
@@ -146,31 +163,39 @@ import topImg from '@/assets/images/top-img.png'
 }
 
 /* About Section */
+.about-section {
+  background-color: #fff;
+}
+
 .about-content {
-  max-width: 800px;
-  margin: 0 auto 40px;
   font-size: 0.9375rem;
   line-height: 2;
   color: #333;
+  margin-bottom: 40px;
 }
 
 .about-content p {
   margin-bottom: 15px;
 }
 
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
 .about-image {
-  max-width: 700px;
-  margin: 0 auto;
+  /* グリッド統一: コンテナ幅いっぱい */
 }
 
 .about-image img {
   width: 100%;
-  border-radius: 4px;
+  height: 230px;
+  object-fit: cover;
+  display: block;
 }
 
 /* Info Section */
-.bg-gray {
-  background-color: #f5f5f5;
+.info-section {
+  background-color: #fff;
 }
 
 .info-title {
@@ -179,50 +204,57 @@ import topImg from '@/assets/images/top-img.png'
   color: var(--color-primary);
   border-left: 4px solid var(--color-primary);
   padding-left: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
-.info-table-wrapper {
-  max-width: 800px;
+.info-title-line {
+  height: 1px;
+  background-color: var(--color-primary);
+  margin-bottom: 30px;
 }
 
 .info-table {
   width: 100%;
   border-collapse: collapse;
-  background: #fff;
+}
+
+.info-table tr {
+  border-bottom: 1px solid #ddd;
 }
 
 .info-table th,
 .info-table td {
-  padding: 20px;
-  border-bottom: 1px solid #eee;
+  padding: 15px 20px;
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
+  font-size: 0.9375rem;
+  background-color: transparent;
+  border: none;
 }
 
 .info-table th {
-  background-color: #f9f9f9;
   color: var(--color-primary);
-  font-weight: 500;
-  width: 150px;
+  font-weight: 700;
+  width: 120px;
 }
 
 .info-table td {
-  font-size: 0.9375rem;
   color: #333;
 }
 
 /* Map Section */
+.map-section {
+  background-color: #fff;
+  padding-top: 0;
+}
+
 .map-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* グリッド統一: コンテナ幅いっぱい */
 }
 
 .map-wrapper iframe {
   display: block;
+  width: 100%;
 }
 
 /* Responsive */
@@ -231,11 +263,15 @@ import topImg from '@/assets/images/top-img.png'
     display: none;
   }
 
+  .container {
+    padding: 0 15px;
+  }
+
   .info-table th,
   .info-table td {
     display: block;
     width: 100%;
-    padding: 15px;
+    padding: 10px 15px;
   }
 
   .info-table th {
@@ -244,7 +280,7 @@ import topImg from '@/assets/images/top-img.png'
   }
 
   .info-table td {
-    padding-top: 5px;
+    padding-top: 0;
   }
 
   .map-wrapper iframe {

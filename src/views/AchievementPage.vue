@@ -23,7 +23,7 @@
       <div class="container">
         <h2 class="section-title">合格実績</h2>
 
-        <div class="records-card">
+        <div class="records-wrapper">
           <table class="records-table">
             <tbody>
               <tr v-for="record in records" :key="record.year">
@@ -43,13 +43,13 @@
 
         <div class="testimonials-images">
           <div class="testimonial-image">
-            <img src="https://images.unsplash.com/photo-1522748906645-95d8adfd52c7?w=300&q=80" alt="桜" />
+            <img :src="testimonialImg1" alt="合格体験談" />
           </div>
           <div class="testimonial-image">
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=300&q=80" alt="校舎" />
+            <img :src="testimonialImg2" alt="合格体験談" />
           </div>
           <div class="testimonial-image">
-            <img src="https://images.unsplash.com/photo-1462536943532-57a629f6cc60?w=300&q=80" alt="桜" />
+            <img :src="testimonialImg3" alt="合格体験談" />
           </div>
         </div>
 
@@ -123,27 +123,97 @@
 </template>
 
 <script setup>
-import PageHeader from '../components/PageHeader.vue'
-import PageBreadcrumb from '../components/PageBreadcrumb.vue'
-import topImg from '@/assets/images/top-img.png'
+import PageHeader from "../components/PageHeader.vue";
+import PageBreadcrumb from "../components/PageBreadcrumb.vue";
+import topImg from "@/assets/images/top-img.png";
+import testimonialImg1 from "@/assets/images/合格体験談画像1.png";
+import testimonialImg2 from "@/assets/images/合格体験談画像2.png";
+import testimonialImg3 from "@/assets/images/合格体験談画像3.png";
 
 const records = [
-  { year: '27', results: '茨木(32名)・三島(22名)・槻の木(21名)他' },
-  { year: '26', results: '茨木(32名)・三島(22名)・槻の木(21名)他' },
-  { year: '25', results: '茨木(32名)・三島(22名)・槻の木(21名)他' },
-  { year: '24', results: '茨木(32名)・三島(22名)・槻の木(21名)他' },
-  { year: '23', results: '茨木(32名)・三島(22名)・槻の木(21名)他' },
-  { year: '22', results: '茨木(32名)・三島(22名)・槻の木(21名)他' },
-  { year: '21', results: '茨木(32名)・三島(22名)・槻の木(21名)他' },
-  { year: '20', results: '茨木(32名)・三島(22名)・槻の木(21名)他' },
-  { year: '19', results: '茨木(32名)・三島(22名)・槻の木(21名)他' },
-  { year: '18', results: '茨木(32名)・三島(22名)・槻の木(21名)他' },
-  { year: '17', results: '茨木(32名)・三島(22名)・槻の木(21名)他' },
-  { year: '16', results: '茨木(32名)・三島(22名)・槻の木(21名)他' }
-]
+  {
+    year: "27",
+    results:
+      "茨木(32名)・三島(22名)・槻の木(21名)・春日丘(18名)・高槻(15名)・千里(12名)・池田(10名)他",
+  },
+  {
+    year: "26",
+    results:
+      "茨木(32名)・三島(22名)・槻の木(21名)・春日丘(18名)・高槻(15名)・千里(12名)・池田(10名)他",
+  },
+  {
+    year: "25",
+    results:
+      "茨木(32名)・三島(22名)・槻の木(21名)・春日丘(18名)・高槻(15名)・千里(12名)・池田(10名)他",
+  },
+  {
+    year: "24",
+    results:
+      "茨木(32名)・三島(22名)・槻の木(21名)・春日丘(18名)・高槻(15名)・千里(12名)・池田(10名)他",
+  },
+  {
+    year: "23",
+    results:
+      "茨木(32名)・三島(22名)・槻の木(21名)・春日丘(18名)・高槻(15名)・千里(12名)・池田(10名)他",
+  },
+  {
+    year: "22",
+    results:
+      "茨木(32名)・三島(22名)・槻の木(21名)・春日丘(18名)・高槻(15名)・千里(12名)・池田(10名)他",
+  },
+  {
+    year: "21",
+    results:
+      "茨木(32名)・三島(22名)・槻の木(21名)・春日丘(18名)・高槻(15名)・千里(12名)・池田(10名)他",
+  },
+  {
+    year: "20",
+    results:
+      "茨木(32名)・三島(22名)・槻の木(21名)・春日丘(18名)・高槻(15名)・千里(12名)・池田(10名)他",
+  },
+  {
+    year: "19",
+    results:
+      "茨木(32名)・三島(22名)・槻の木(21名)・春日丘(18名)・高槻(15名)・千里(12名)・池田(10名)他",
+  },
+  {
+    year: "18",
+    results:
+      "茨木(32名)・三島(22名)・槻の木(21名)・春日丘(18名)・高槻(15名)・千里(12名)・池田(10名)他",
+  },
+  {
+    year: "17",
+    results:
+      "茨木(32名)・三島(22名)・槻の木(21名)・春日丘(18名)・高槻(15名)・千里(12名)・池田(10名)他",
+  },
+  {
+    year: "16",
+    results:
+      "茨木(32名)・三島(22名)・槻の木(21名)・春日丘(18名)・高槻(15名)・千里(12名)・池田(10名)他",
+  },
+];
 </script>
 
 <style scoped>
+/* Section & Container - グリッド統一 */
+.section {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
 /* Secondary Nav */
 .secondary-nav {
   background-color: var(--color-primary);
@@ -184,11 +254,15 @@ const records = [
   background-color: #fff;
 }
 
-.records-card {
-  max-width: 700px;
-  margin: 0 auto;
-  border: 1px solid #ddd;
-  padding: 30px;
+.records-wrapper {
+  width: 100%;
+  height: 420px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 30px 50px;
+  box-sizing: border-box;
 }
 
 .records-table {
@@ -198,21 +272,26 @@ const records = [
 
 .records-table th,
 .records-table td {
-  padding: 12px 15px;
-  border-bottom: 1px solid #eee;
+  padding: 4px 0;
   text-align: left;
+  border: none;
+  font-size: 13px;
+  line-height: 1.8;
 }
 
 .records-table th {
-  background-color: transparent;
-  color: var(--color-primary);
   font-weight: 700;
-  width: 100px;
+  color: #003C78;
+  background-color: transparent;
+  border: none;
+  white-space: nowrap;
+  padding-right: 30px;
 }
 
 .records-table td {
-  font-size: 0.9375rem;
   color: #333;
+  background-color: transparent;
+  border: none;
 }
 
 /* Testimonials Section */
@@ -222,27 +301,23 @@ const records = [
 
 .testimonials-images {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 50px;
 }
 
 .testimonial-image {
-  width: 200px;
-  height: 150px;
+  flex: 1;
   overflow: hidden;
-  border-radius: 4px;
 }
 
 .testimonial-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
 }
 
 .testimonials-list {
-  max-width: 900px;
-  margin: 0 auto;
+  /* グリッド統一: コンテナ幅いっぱいに */
 }
 
 .testimonial-item {
@@ -296,19 +371,26 @@ const records = [
     display: none;
   }
 
-  .records-card {
+  .records-wrapper {
+    height: auto;
+    min-height: 300px;
     padding: 15px;
+  }
+
+  .records-table th,
+  .records-table td {
+    padding: 0;
+    font-size: 11px;
+    line-height: 2;
+  }
+
+  .records-table th {
+    width: 45px;
+    padding-right: 8px;
   }
 
   .testimonials-images {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .testimonial-image {
-    width: 100%;
-    max-width: 300px;
-    height: 180px;
   }
 
   .testimonial-item {
