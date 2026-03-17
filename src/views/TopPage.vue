@@ -879,41 +879,8 @@ import banner3 from "@/assets/images/banner3 1.png";
 }
 
 @media (max-width: 768px) {
-  .hero {
-    height: auto;
-    min-height: 280px;
-  }
-
-  .hero-content {
-    padding: 40px 20px;
-  }
-
-  .hero-title-line {
-    font-size: 1.75rem;
-  }
-
-  .hero-description {
-    display: none;
-  }
-
-  .hero-badges {
-    display: none;
-  }
-
   .secondary-nav {
     display: none;
-  }
-
-  .mobile-info-bar {
-    display: block;
-  }
-
-  .trial-banner {
-    display: none;
-  }
-
-  .mobile-trial-banner {
-    display: block;
   }
 
   .section {
